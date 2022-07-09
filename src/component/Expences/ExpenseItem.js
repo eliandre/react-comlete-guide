@@ -1,13 +1,17 @@
+import React, { useState } from 'react';
 import ExpenseDate from '../Expences/ExpenseDate';
 import './ExpenseItem.css';
 import Card from '../UI/Card';
 
 function ExpenseItem(props) {
 
-    let title = props.title;
+    // useState tagastab massiivi. Seega saab kasutada array destructioningi.
+    // Esimene element on pointer, teine element on funktsioon, mille saab hiljem välja kutsuda pealkirja muutmiseks
+    const [title, setTitle] = useState(props.title);
 
     function clickHandler() {
-        title = 'Uus pealkiri'
+        setTitle('Uuendatud');
+        console.log(title);
     };
 
     return( 
