@@ -3,11 +3,16 @@ import './ExpenseForm.css';
 
 function ExpenseForm() {
 
+    // Näitab, milline väärtus on kasutaja poolt sisestatud.
+    function titleChangeHandler(event) {
+        console.log(event.target.value);
+    }
+
     return <form>
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label>Pealkiri</label>
-                <input type="text" />
+                <input type="text" onChange={titleChangeHandler} />
             </div>
             <div className="new-expense__control">
                 <label>Kogus</label>
