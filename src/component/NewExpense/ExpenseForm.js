@@ -51,7 +51,19 @@ function ExpenseForm() {
         // });
     }
 
-    return <form>
+    function submitHandler(event) {
+        event.preventDefault(); // vältimaks lehe uuesti laadimist pärast "saada" nupu vajutamist
+
+        const expenseData = {
+            title: enteredTitle,
+            amunt: enteredAmount,
+            date: new Date(enteredDate)
+        }
+
+        console.log(expenseData);
+    }
+
+    return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label>Pealkiri</label>
