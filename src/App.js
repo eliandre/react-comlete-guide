@@ -10,9 +10,14 @@ function App() {
     { title: 'Kohting', amount: 75.68, date: new Date(2022, 7, 10) },
   ];
 
+  function addExpenseHandler(expense) {
+    console.log('App.js fail');
+    console.log(expense);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );

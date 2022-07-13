@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-function ExpenseForm() {
+function ExpenseForm(props) {
 
     // 1. variant - kasutada mitut state'i.
     const [enteredTitle, setEnteredTitle] = useState('');
@@ -60,7 +60,7 @@ function ExpenseForm() {
             date: new Date(enteredDate)
         }
 
-        console.log(expenseData);
+        props.onSaveExpenseData(expenseData);
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
